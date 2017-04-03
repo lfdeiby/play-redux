@@ -1,0 +1,16 @@
+{
+  "presets": [
+    [ "es2015", { "loose": true } ],
+    "react",
+    "stage-1"
+  ],
+  "plugins": [
+    "transform-export-extensions",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "transform-async-generator-functions",
+    "transform-async-to-generator",
+    "syntax-trailing-function-commas",
+    "transform-exponentiation-operator"
+  ]
+}

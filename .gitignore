@@ -1,0 +1,11 @@
+# Dirs
+node_modules
+
+# Log Files
+*.log
+*.firebaserc
+.idea
+.idea/*
+
+database.rules.json
+firebase.json

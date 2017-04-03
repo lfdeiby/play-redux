@@ -1,0 +1,83 @@
+body{
+    background: #333;
+    color: #eee;
+}
+
+.popup{
+    position: fixed;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,.4);
+    height: 0px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 3;
+    transition: height .2s linear;
+}
+
+.popup.active {
+    top: 0px;
+    height: 100%;
+    z-index: 3;
+    overflow: auto;
+    width: 100%;
+}
+
+.popup .container{
+    background: #eeeeee;
+    color: #333;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.alert{
+    position: fixed;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,.4);
+    height: 0px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 3;
+    transition: height .2s linear;
+}
+
+.alert.active {
+    top: 0px;
+    height: 100%;
+    z-index: 3;
+    overflow: auto;
+    width: 100%;
+}
+
+.alert .container{
+    background: #eeeeee;
+    color: #333;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+.alert .container.warning{
+    background: rgba(254, 162, 35, 0.9);
+}
+
+.row{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.selector li{
+    cursor: pointer;
+}
+
+.selector li.active{
+    background: #4b90ab;
+}
