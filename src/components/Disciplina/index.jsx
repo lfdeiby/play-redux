@@ -86,7 +86,7 @@ class Disciplina extends Component{
 //Agrego los estados a la clase Discplina
 const mapStateToProps = (state) => {
     return {
-        items: state.disciplina,
+        items: state.disciplina.lista,
         popup: state.popup,
         alert: state.alert,
     };

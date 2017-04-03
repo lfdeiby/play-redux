@@ -17,6 +17,8 @@ export const store = createStore(
     composeWithDevTools()
 );
 const history = syncHistoryWithStore(browserHistory, store);
+console.log(store.getState());
+
 
 render(
     <Provider store={store}>

@@ -47,7 +47,7 @@ class DisciplinaDelete extends React.Component{
 
 const mapStateToProps = (state) => {
     return{
-        disciplina: state.disciplina
+        disciplina: state.disciplina.lista
     };
 };
 

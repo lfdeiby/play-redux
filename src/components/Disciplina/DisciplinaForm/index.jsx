@@ -100,8 +100,8 @@ class DisciplinaForm extends React.Component{
 // Agrego los estados a la clase DisciplinaForm
 const mapStateToProps = (state) => {
     return{
-        id: state.disciplina_form.id,
-        text: state.disciplina_form.text
+        id: state.disciplina.form.id,
+        text: state.disciplina.form.text
     }
 };
 
