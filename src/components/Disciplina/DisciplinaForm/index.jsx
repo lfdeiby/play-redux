@@ -16,7 +16,7 @@ class DisciplinaForm extends React.Component{
 
         // text: Valor que usará el input name
         this.state = {
-            text: this.props.text
+            name: this.props.name
         };
 
         // Enlazar los metodos con la propiedad this
@@ -31,7 +31,7 @@ class DisciplinaForm extends React.Component{
      */
     handleTextOnChange(event){
         this.setState({
-            text: event.target.value
+            name: event.target.value
         });
     };
 
@@ -51,14 +51,14 @@ class DisciplinaForm extends React.Component{
     handleGuardar(event){
         event.preventDefault();
         //Obtengo el valor del input text
-        let text= this.state.text;
+        let name= this.state.name;
 
         // Verifico si el formulario fue abierto para Modificar una Disciplina específica
         // Caso contrario guardo una nueva Disciplina
         if( this.props.id !== 0){
-            this.props.dispatch( disciplina_update(this.props.id, text) );
+            this.props.dispatch( disciplina_update(this.props.id, name) );
         }else{
-            this.props.dispatch( disciplina_add(text) );
+            this.props.dispatch( disciplina_add(name) );
         }
 
         // Una vez guardado cierro el POPUP
@@ -73,25 +73,41 @@ class DisciplinaForm extends React.Component{
         // Verifico si el formulario fue abierto como Agregar o Modificar una Dsciplina en esepcífico
         let btnText = (this.props.id == 0) ? "Guardar" : "Modificar";
         return(
-            <div>
-                <form action="." onSubmit={ this.handleGuardar }>
-                    <input type="hidden" name="id" value="10" />
-                    <div className="group">
-                        <label htmlFor="name"> Nombre: </label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Ingrese un nombre"
-                            ref="name"
-                            value={this.state.text}
-                            onChange={ this.handleTextOnChange }/>
+            <div className="row">
+                <div className="x_panel">
+                    <div className="x_title">
+                        <h2> <span className="icon-download3"></span> Disciplina</h2>
+                        <ul className="nav navbar-right panel_toolbox">
+                            <li>
+                                <a onClick={ this.handleClose }> <span className="icon-close"></span> </a>
+                            </li>
+                        </ul>
+                        <div className="clearfix"></div>
                     </div>
-                    <div className="group">
-                        <button type="submit" onClick={ this.handleGuardar }> {btnText} </button>
-                        <button onClick={ this.handleClose }> Cancelar </button>
-                    </div>
-                </form>
+                    <p>
+                        Ingrese el nombre completo de la Disciplina que desa { btnText }.
+                    </p>
+                    <form action="." onSubmit={ this.handleGuardar }>
+                        <input type="hidden" name="id" value="10" />
+                        <div className="form-group">
+                            <label htmlFor="name"> Nombre: </label>
+                            <input
+                                className="form-control"
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Ingrese un nombre"
+                                ref="name"
+                                value={ this.state.name}
+                                onChange={ this.handleTextOnChange } />
+                        </div>
+                        <br />
+                        <div className="form-group text-right">
+                            <button className="btn btn-success btn-lg" type="submit" onClick={ this.handleGuardar }> {btnText} </button>
+                            <button className="btn btn-danger btn-lg" onClick={ this.handleClose }> Cancelar </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         );
     };
@@ -100,8 +116,8 @@ class DisciplinaForm extends React.Component{
 // Agrego los estados a la clase DisciplinaForm
 const mapStateToProps = (state) => {
     return{
-        id: state.disciplina_form.id,
-        text: state.disciplina_form.text
+        id: state.disciplina.form.id,
+        name: state.disciplina.form.name
     }
 };
 

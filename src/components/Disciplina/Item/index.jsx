@@ -7,7 +7,7 @@ export default class Item extends Component{
 
     static propTypes = {
         selected: PropTypes.bool.isRequired,
-        text: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
         onClick: PropTypes.func.isRequired,
         handleEdit: PropTypes.func.isRequired
     };
@@ -20,11 +20,13 @@ export default class Item extends Component{
         return(
             <li
                 onClick={ this.props.onClick }
-                className={" " + (this.props.selected ? 'active' : '') }
+                className={"list-group-item " + (this.props.selected ? 'list-group-item-success ' : '') }
             >
-                { this.props.text }
-                <div>
-                    <button onClick={ this.props.handleEdit } > Edit </button>
+                { this.props.name }
+                <div className="selector-edit">
+                    <button onClick={ this.props.handleEdit } alt="Editar" title="Editar">
+                        <span className="icon-edit"></span>
+                    </button>
                 </div>
             </li>
         );

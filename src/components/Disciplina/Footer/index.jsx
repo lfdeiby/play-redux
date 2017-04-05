@@ -36,14 +36,14 @@ class Footer extends Component{
                 show = true;
                 break;
             }
-        };
+        }
         if( show )
             this.props.dispatch({
                 type: 'ALERT_SHOW',
                 status: 'warning'
             });
         else
-            alert('Seleccione una o varias disciplinas \nAntes de presionar el boton "Eliminar"');
+            alert('Seleccione una o varias Disciplinas \nAntes de presionar el botón "Eliminar".');
     };
 
     /**
@@ -52,24 +52,26 @@ class Footer extends Component{
      */
     render(){
         return(
-            <footer>
-                <div>
-                    <button onClick={ this.handleForm }> Agregar </button>
+            <div>
+                <div className="text-right">
+                    <button className="btn btn-success btn-sm" onClick={ this.handleForm }>
+                        Agregar &nbsp; <span className="icon-plus2"></span>
+                    </button>
+                    <button className="btn btn-danger btn-sm" onClick={ this.handleDeleteAlert }>
+                        Eliminar &nbsp; <span className="icon-bin"></span>
+                    </button>
                 </div>
-                <div>
-                    <button onClick={ this.handleDeleteAlert }> Eliminar </button>
-                </div>
-            </footer>
+            </div>
         );
     };
-};
+}
 
 /**
  * Connect: Conectar la clase Footer con redux
  */
 const mapStateToProps = (state) => {
     return{
-        disciplina: state.disciplina
+        disciplina: state.disciplina.lista
     };
 };
 

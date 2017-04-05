@@ -39,7 +39,7 @@ class Disciplina extends Component{
     handleEdit(id){
         this.props.items.forEach((item) => {
             if(item.id == id){
-                this.props.dispatch( disciplina_form_update(item.id, item.text) );
+                this.props.dispatch( disciplina_form_update(item.id, item.name) );
             }
         });
         this.props.dispatch( {type: 'POPUP_SHOW'} );
@@ -51,15 +51,23 @@ class Disciplina extends Component{
      */
     render(){
         return(
-            <div>
-                <h2>Disciplina</h2>
+            <div className="x_panel">
+                <div className="x_title">
+                    <h2>Disciplinas</h2>
+                    <div className="clearfix"></div>
+                </div>
+                <div className="panel-body">
+                    <p>
+                        Lista de todas las diciplinas.
+                    </p>
+                </div>
                 <section className="selector">
-                    <ul className="container">
+                    <ul className="list-group">
                         {this.props.items.map(item =>
                             <Item
                                 key={item.id}
                                 selected={item.selected}
-                                text={item.text}
+                                name={item.name}
                                 onClick={() => this.handlerOnClick(item.id)}
                                 handleEdit={() => this.handleEdit(item.id)}
                             />
@@ -86,7 +94,7 @@ class Disciplina extends Component{
 //Agrego los estados a la clase Discplina
 const mapStateToProps = (state) => {
     return {
-        items: state.disciplina,
+        items: state.disciplina.lista,
         popup: state.popup,
         alert: state.alert,
     };

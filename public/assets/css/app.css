@@ -1,14 +1,9 @@
-body{
-    background: #333;
-    color: #eee;
-}
-
 .popup{
     position: fixed;
     top: -10px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0,0,0,.4);
+    background: rgba(0,0,0,.5);
     height: 0px;
     width: 100%;
     overflow: hidden;
@@ -24,9 +19,7 @@ body{
     width: 100%;
 }
 
-.popup .container{
-    background: #eeeeee;
-    color: #333;
+.popup .principal{
     display: inline-block;
     position: absolute;
     top: 50%;
@@ -39,14 +32,16 @@ body{
     top: -10px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0,0,0,.4);
+    background: rgba(0,0,0,.5);
     height: 0px;
     width: 100%;
     overflow: hidden;
     z-index: 3;
     transition: height .2s linear;
 }
-
+.alert h2{
+    font-size: 1.8em !important;
+}
 .alert.active {
     top: 0px;
     height: 100%;
@@ -55,23 +50,57 @@ body{
     width: 100%;
 }
 
-.alert .container{
+.alert .principal{
     background: #eeeeee;
-    color: #333;
+    box-sizing: border-box;
+    color: #f6f6f6;
     display: inline-block;
+    font-size: 1em;
+    padding: 20px 0px;
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
     transform: translate(-50%, -50%);
 }
-.alert .container.warning{
+.alert .principal.warning{
     background: rgba(254, 162, 35, 0.9);
 }
+.alert .principal.danger{
+    background: rgba(182, 70, 69, 0.9);
+}
+alert .principal.info, alert .principal.default{
+    background: rgba(63, 186, 228, 0.9);
+}
+alert .principal.success{
+    background: rgba(149, 183, 93, 0.9);
+}
+.alert .principal .list-group-item{
+    background-color: transparent !important;
+}
+.list-group-item .selector-edit{
+    font-size: 1.8em;
+    color: #8a8a8a;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    opacity: 0;
+}
+.list-group-item .selector-edit button{
+    border: none;
+    background: transparent;
+}
+.list-group-item:hover .selector-edit{
+    opacity: 1;
+}
 
-.row{
-    max-width: 1200px;
-    margin: auto;
+.selector{
+    background: #eeeeee;
+    box-sizing: border-box;
+    height: 250px;
+    overflow: auto;
+    padding: 5px 0px;
+    margin-bottom: 5px;
 }
 
 .selector li{
@@ -80,4 +109,15 @@ body{
 
 .selector li.active{
     background: #4b90ab;
+}
+.selector .list-group-item{
+    background: transparent;
+}
+.selector .list-group-item-success{
+    color: #3c763d;
+    background-color: #dff0d8;
+}
+
+.x_panel .panel_toolbox{
+    min-width: auto !important;
 }

@@ -1,7 +1,7 @@
 //Estado inicial de la lista de Diciplinas
-const inicio = [ {id: 1, text:"Obama", selected:false},
-    {id: 2, text:"Mandela", selected:false},
-    {id: 3, text:"Clinton", selected:true} ];
+const inicio = [ {id: 1, name:"Obama", selected:false},
+    {id: 2, name:"Mandela", selected:false},
+    {id: 3, name:"Clinton", selected:true} ];
 
 /**
  * disciplina: Reducer que gestiona todo con respecto al modelo de Disciplina
@@ -15,18 +15,16 @@ const disciplina = (state=inicio, action) => {
         case 'DISCIPLINA_ADD':
             return [
                 ...state,
-                {id: Date.now(), text: action.payload.text, selected: false}
+                {id: Date.now(), name: action.payload.name, selected: false}
             ];
         //Modificar una Disciplina específica
         case 'DISCIPLINA_UPDATE':
-            console.log("REDUCER DE DISCIPLINA");
-            console.log(state);
-            console.log(action);
             let update_state = [];
             state.forEach((item) =>{
                 if(item.id == action.payload.id){
                     let update = Object.assign({}, item, {
-                        text: action.payload.text
+                        name: action.payload.name,
+                        selected: true
                     });
                     update_state.push(update);
                 }else {

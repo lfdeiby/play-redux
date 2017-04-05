@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?zhvo3o');
+  src:  url('fonts/icomoon.eot?zhvo3o#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?zhvo3o') format('truetype'),
+    url('fonts/icomoon.woff?zhvo3o') format('woff'),
+    url('fonts/icomoon.svg?zhvo3o#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-plus:before {
+  content: "\e90c";
+}
+.icon-angle-right:before {
+  content: "\e90a";
+}
+.icon-angle-left:before {
+  content: "\e90b";
+}
+.icon-angle-down:before {
+  content: "\e908";
+}
+.icon-angle-up:before {
+  content: "\e909";
+}
+.icon-envelope-o:before {
+  content: "\e907";
+}
+.icon-bars:before {
+  content: "\e906";
+}
+.icon-edit:before {
+  content: "\e905";
+}
+.icon-pencil-square-o:before {
+  content: "\e905";
+}
+.icon-check:before {
+  content: "\e904";
+}
+.icon-close:before {
+  content: "\e900";
+}
+.icon-remove:before {
+  content: "\e900";
+}
+.icon-times:before {
+  content: "\e900";
+}
+.icon-sign-out:before {
+  content: "\e901";
+}
+.icon-exclamation-circle:before {
+  content: "\e902";
+}
+.icon-exclamation-triangle:before {
+  content: "\e903";
+}
+.icon-warning:before {
+  content: "\e903";
+}
+.icon-folder-download:before {
+  content: "\e933";
+}
+.icon-envelop:before {
+  content: "\e945";
+}
+.icon-location2:before {
+  content: "\e948";
+}
+.icon-mobile:before {
+  content: "\e958";
+}
+.icon-quotes-left:before {
+  content: "\e977";
+}
+.icon-quotes-right:before {
+  content: "\e978";
+}
+.icon-bin:before {
+  content: "\e9ac";
+}
+.icon-download3:before {
+  content: "\e9c7";
+}
+.icon-wink:before {
+  content: "\e9e7";
+}
+.icon-plus2:before {
+  content: "\ea0a";
+}
+.icon-mail:before {
+  content: "\ea83";
+}
+.icon-facebook2:before {
+  content: "\ea91";
+}
+

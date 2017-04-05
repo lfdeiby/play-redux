@@ -3,11 +3,11 @@
  * @param text
  * @returns {{type: string, payload: {text: *}}}
  */
-export const disciplina_add = (text) => {
+export const disciplina_add = (name) => {
     return {
         type: 'DISCIPLINA_ADD',
         payload: {
-            text: text
+            name: name
         }
     };
 };
@@ -18,12 +18,12 @@ export const disciplina_add = (text) => {
  * @param text
  * @returns {{type: string, payload: {id: *, text: *}}}
  */
-export const disciplina_update = (id, text) => {
+export const disciplina_update = (id, name) => {
     return {
         type: 'DISCIPLINA_UPDATE',
         payload: {
             id: id,
-            text: text
+            name: name
         }
     };
 };

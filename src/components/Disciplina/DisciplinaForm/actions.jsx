@@ -14,12 +14,12 @@ export const disciplina_form_add = () => {
  * @param text
  * @returns {{type: string, payload: {id: *, text: *}}}
  */
-export const disciplina_form_update = (id, text) => {
+export const disciplina_form_update = (id, name) => {
     return {
         type: 'DISCIPLINA_FORM_UPDATE',
         payload: {
             id: id,
-            text: text
+            name: name
         }
     }
 };

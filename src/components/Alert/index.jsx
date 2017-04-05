@@ -57,9 +57,9 @@ class Alert extends Component{
             // y no asi dentro de la etiqueta "app"
             ReactDom.render(
                 <Provider store={store}>
-                    <div className={ "container " + ((this.props.status) ? this.props.status : '') } >
-                        <div className="row">
-                            <button onClick={ this.handlerClose }> Close </button>
+                    <div className={ "principal " + ((this.props.status) ? this.props.status : '') } >
+                        <div className="container">
+                            {/*<button onClick={ this.handlerClose }> Close </button>*/}
                             { this.props.children }
                         </div>
                     </div>

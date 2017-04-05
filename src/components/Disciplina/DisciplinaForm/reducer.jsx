@@ -1,7 +1,7 @@
 // Estado inicial del formulario
 const inicio = {
     id: 0,
-    text: ''
+    name: ''
 };
 
 /**
@@ -16,14 +16,14 @@ const form = (state=inicio, action) => {
         case "DISCIPLINA_FORM_ADD":
             return {
                 id: 0,
-                text: '',
+                name: '',
                 selected: false
             };
         // Abre el formulario con un item de Dsciplina
         case "DISCIPLINA_FORM_UPDATE":
             return {
                 id: action.payload.id,
-                text: action.payload.text,
+                name: action.payload.name,
                 selected: true
             };
         default:

@@ -56,8 +56,8 @@ class Popup extends Component{
             // y no asi dentro de la etiqueta "app"
             ReactDom.render(
                 <Provider store={store}>
-                    <div className="container">
-                        <button onClick={ this.handlerClose }> Close </button>
+                    <div className="principal">
+                        {/*<button onClick={ this.handlerClose }> Close </button>*/}
                         { this.props.children }
                     </div>
                 </Provider>,

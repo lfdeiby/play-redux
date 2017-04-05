@@ -23,20 +23,23 @@ class DisciplinaDelete extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="col-sm-8 col-sm-offset-2 ">
+                <div>
+                    <h2> <span className="icon-exclamation-triangle"></span> Precaución </h2>
+                </div>
                 <p>
-                    Esta seguro que desea <b> Eliminar </b> las siguientes disciplinas:
+                    Esta seguro que desea <b> Eliminar </b> las siguientes Disciplinas:
                 </p>
-                <ul>
+                <ul className="list-group">
                     { this.props.disciplina.map( (item) =>{
                         if( item.selected ){
-                            return (<li key={item.id}> { item.text } </li>)
+                            return (<li className="list-group-item" key={item.id}> { item.name } </li>)
                         }
                     })}
                 </ul>
-                <div>
-                    <button onClick={ this.handleEliminar }>Eliminar</button>
-                    <button onClick={ this.handleCancelar }> Cancelar </button>
+                <div className="text-right">
+                    <button className="btn btn-success btn-lg" onClick={ this.handleEliminar }>Eliminar</button>
+                    <button className="btn btn-danger btn-lg" onClick={ this.handleCancelar }> Cancelar </button>
                 </div>
             </div>
 
@@ -47,7 +50,7 @@ class DisciplinaDelete extends React.Component{
 
 const mapStateToProps = (state) => {
     return{
-        disciplina: state.disciplina
+        disciplina: state.disciplina.lista
     };
 };
 
